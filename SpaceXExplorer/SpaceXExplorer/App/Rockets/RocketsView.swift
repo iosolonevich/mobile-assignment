@@ -14,7 +14,7 @@ struct RocketsView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             NavigationView {
-                Group {
+//                Group {
                     if viewStore.isLoading {
                         VStack {
                             Spacer()
@@ -25,15 +25,15 @@ struct RocketsView: View {
                             Spacer()
                         }
                     } else {
-                        VStack {
+                        List {
                             RocketsList(viewStore)
                         }
+                        .navigationBarTitle(Text("Rockets"))
                     }
-                }
-                .padding()
+//                }
+//                .padding()
             }
             .edgesIgnoringSafeArea(.bottom)
-            .navigationBarTitle("Rockets")
             .onAppear { viewStore.send(.onAppear) }
             .onDisappear { viewStore.send(.onDisappear) }
         }
@@ -52,13 +52,19 @@ extension RocketsView {
                         destination: RocketDetailView(store: rocketStore),
                         label: {
                             HStack {
-                                Image(systemName: "paperplane.circle")
-                                    .font(Font.system(.largeTitle))
+                                Image("Rocket")
+                                    .padding(.trailing, 10)
                                 VStack(alignment: .leading) {
                                     Text(rocketViewStore.state.rocket.name)
                                         .font(.headline)
-                                    Text(rocketViewStore.state.rocket.firstFlight)
-                                        .font(.subheadline)
+                                    HStack {
+                                        Text("First flight:")
+                                        Text(rocketViewStore.state.rocket.firstFlight,
+                                             // ??????????????
+                                             formatter: viewStore.dateFormatter)
+                                    }
+                                    .foregroundColor(.gray)
+                                    .font(.footnote)
                                 }
                             }
                             
@@ -84,6 +90,7 @@ struct RocketsView_Previews: PreviewProvider {
                 environment: .init(
                     rocketsClient: .mockPreview(),
                     mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
+//                    dateFormatter: DateFormatter(),
                     uuid: UUID.init
                 )
             )

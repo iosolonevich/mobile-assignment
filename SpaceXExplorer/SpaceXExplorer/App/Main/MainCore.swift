@@ -35,21 +35,24 @@ let mainReducer: Reducer<MainState, MainAction, MainEnvironment> = .combine(
         state: \MainState.rocketsState,
         action: /MainAction.rockets,
         environment: { environment in
-            RocketsEnvironment(
+//            let rocketsDateFormatter = DateFormatter()
+//            rocketsDateFormatter.dateFormat = "dd.MM.yyyy"
+            
+            return RocketsEnvironment(
                 rocketsClient: environment.rocketsClient,
                 mainQueue: environment.mainQueue,
+//                dateFormatter: rocketsDateFormatter,
                 uuid: environment.uuid
             )
         }
     ),
-    
-        .init { state, action, environment in
-            switch action {
-            case .rockets:
-                return .none
-            case .selectedTabChange(let selectedTab):
-                state.selectedTab = selectedTab
-                return .none
-            }
+    .init { state, action, environment in
+        switch action {
+        case .rockets:
+            return .none
+        case .selectedTabChange(let selectedTab):
+            state.selectedTab = selectedTab
+            return .none
         }
+    }
 )

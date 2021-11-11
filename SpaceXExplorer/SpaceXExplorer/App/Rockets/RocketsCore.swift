@@ -13,6 +13,11 @@ import ComposableArchitecture
 struct RocketsState: Equatable {
     var rockets = IdentifiedArrayOf<RocketDetailState>()
     var isLoading = false
+    var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        return dateFormatter
+    }()
 }
 
 enum RocketsAction: Equatable {
@@ -30,6 +35,7 @@ enum RocketsAction: Equatable {
 struct RocketsEnvironment {
     var rocketsClient: RocketsClient
     var mainQueue: AnySchedulerOf<DispatchQueue>
+//    var dateFormatter: DateFormatter
     var uuid: () -> UUID
 }
 

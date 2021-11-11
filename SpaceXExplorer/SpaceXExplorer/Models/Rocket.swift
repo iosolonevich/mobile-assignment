@@ -22,7 +22,8 @@ struct Rocket: Codable, Identifiable, Equatable {
     let name, type: String
     let active: Bool
 //    let stages, boosters, costPerLaunch, successRatePct: Int
-    let firstFlight, country, company: String
+    let firstFlight: Date
+    let country, company: String
     let wikipedia: String
     let rocketDescription, id: String
 
@@ -157,11 +158,15 @@ struct CompositeFairing: Codable {
 // MARK: Mock
 extension Rocket {
     static var mockRocket1: Rocket {
-        Rocket(
-            name: "Rocket1",
+        let firstFlightString = "2018-02-05"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let firstFlight = dateFormatter.date(from: firstFlightString) else { fatalError() }
+        return Rocket(
+            name: "Big rocket 123",
             type: "Big rocket",
             active: true,
-            firstFlight: "05-02-2018",
+            firstFlight: firstFlight,
             country: "USA",
             company: "SpaceX",
             wikipedia: "wikipedia link 1",
@@ -170,11 +175,15 @@ extension Rocket {
     }
     
     static var mockRocket2: Rocket {
-        Rocket(
-            name: "Rocket2",
+        let firstFlightString = "2020-05-02"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        guard let firstFlight = dateFormatter.date(from: firstFlightString) else { fatalError() }
+        return Rocket(
+            name: "Medium size rocket 2",
             type: "Medium size rocket",
             active: true,
-            firstFlight: "02-05-2020",
+            firstFlight: firstFlight,
             country: "USA",
             company: "SpaceX",
             wikipedia: "wikipedia link 2",
