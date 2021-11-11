@@ -41,8 +41,18 @@ extension MainView {
     }
 }
 
-//struct MainView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MainView()
-//    }
-//}
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView(
+            store: .init(
+                initialState: MainState(),
+                reducer: mainReducer,
+                environment: .init(
+                    rocketsClient: .mockPreview(),
+                    mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
+                    uuid: UUID.init
+                )
+            )
+        )
+    }
+}

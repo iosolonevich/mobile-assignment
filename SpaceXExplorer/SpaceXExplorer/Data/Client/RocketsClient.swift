@@ -21,3 +21,11 @@ extension RocketsClient {
         }
     )
 }
+
+extension RocketsClient {
+    static func mockPreview(all: @escaping () -> Effect<Rockets, APIError> = {
+        .init(value: [Rocket.mockRocket1, Rocket.mockRocket2])
+    }) -> Self {
+        Self(rockets: all)
+    }
+}

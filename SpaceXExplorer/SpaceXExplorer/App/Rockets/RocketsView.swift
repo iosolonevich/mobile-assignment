@@ -70,8 +70,23 @@ extension RocketsView {
     }
 }
 
-//struct RocketsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RocketsView()
-//    }
-//}
+struct RocketsView_Previews: PreviewProvider {
+    static var previews: some View {
+        RocketsView(
+            store: .init(
+                initialState: .init(
+                    rockets: .init(
+                        uniqueElements: [Rocket.mockRocket1, Rocket.mockRocket2].map {
+                        RocketDetailState(id: .init(), rocket: $0)
+                    })
+                ),
+                reducer: rocketsReducer,
+                environment: .init(
+                    rocketsClient: .mockPreview(),
+                    mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
+                    uuid: UUID.init
+                )
+            )
+        )
+    }
+}
