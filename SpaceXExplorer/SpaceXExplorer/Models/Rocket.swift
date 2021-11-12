@@ -11,12 +11,12 @@ typealias Rockets = [Rocket]
 
 // MARK: - Rocket
 struct Rocket: Codable, Identifiable, Equatable {
-//    let height, diameter: Diameter
-//    let mass: Mass
-//    let firstStage: FirstStage
-//    let secondStage: SecondStage
+    let height, diameter: Diameter
+    let mass: Mass
+    let firstStage: FirstStage
+    let secondStage: SecondStage
 //    let engines: Engines
-//    let landingLegs: LandingLegs
+    let landingLegs: LandingLegs
 //    let payloadWeights: [PayloadWeight]
 //    let flickrImages: [String]
     let name, type: String
@@ -28,11 +28,11 @@ struct Rocket: Codable, Identifiable, Equatable {
     let rocketDescription, id: String
 
     enum CodingKeys: String, CodingKey {
-//        case height, diameter, mass
-//        case firstStage = "first_stage"
-//        case secondStage = "second_stage"
+        case height, diameter, mass
+        case firstStage = "first_stage"
+        case secondStage = "second_stage"
 //        case engines
-//        case landingLegs = "landing_legs"
+        case landingLegs = "landing_legs"
 //        case payloadWeights = "payload_weights"
 //        case flickrImages = "flickr_images"
         case name, type, active//, stages, boosters
@@ -46,7 +46,7 @@ struct Rocket: Codable, Identifiable, Equatable {
 }
 
 // MARK: - Diameter
-struct Diameter: Codable {
+struct Diameter: Codable, Equatable {
     let meters, feet: Double?
 }
 
@@ -89,7 +89,7 @@ struct Engines: Codable {
 //}
 
 // MARK: - FirstStage
-struct FirstStage: Codable {
+struct FirstStage: Codable, Equatable {
     //let thrustSeaLevel, thrustVacuum: Thrust
     let reusable: Bool
     let engines: Int
@@ -106,13 +106,13 @@ struct FirstStage: Codable {
 }
 
 // MARK: - LandingLegs
-struct LandingLegs: Codable {
+struct LandingLegs: Codable, Equatable {
     let number: Int
     let material: String?
 }
 
 // MARK: - Mass
-struct Mass: Codable {
+struct Mass: Codable, Equatable {
     let kg, lb: Int
 }
 
@@ -123,7 +123,7 @@ struct PayloadWeight: Codable {
 }
 
 // MARK: - SecondStage
-struct SecondStage: Codable {
+struct SecondStage: Codable ,Equatable {
     //let thrust: Thrust
 //    let payloads: Payloads
     let reusable: Bool
@@ -153,41 +153,4 @@ struct SecondStage: Codable {
 // MARK: - CompositeFairing
 struct CompositeFairing: Codable {
     let height, diameter: Diameter
-}
-
-// MARK: Mock
-extension Rocket {
-    static var mockRocket1: Rocket {
-        let firstFlightString = "2018-02-05"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        guard let firstFlight = dateFormatter.date(from: firstFlightString) else { fatalError() }
-        return Rocket(
-            name: "Big rocket 123",
-            type: "Big rocket",
-            active: true,
-            firstFlight: firstFlight,
-            country: "USA",
-            company: "SpaceX",
-            wikipedia: "wikipedia link 1",
-            rocketDescription: "description description description",
-            id: "id1")
-    }
-    
-    static var mockRocket2: Rocket {
-        let firstFlightString = "2020-05-02"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        guard let firstFlight = dateFormatter.date(from: firstFlightString) else { fatalError() }
-        return Rocket(
-            name: "Medium size rocket 2",
-            type: "Medium size rocket",
-            active: true,
-            firstFlight: firstFlight,
-            country: "USA",
-            company: "SpaceX",
-            wikipedia: "wikipedia link 2",
-            rocketDescription: "description descrip tion desc ription cription descrip tion",
-            id: "id2")
-    }
 }

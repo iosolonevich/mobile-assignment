@@ -22,6 +22,9 @@
 		FAA6A2CA273BC0E1009E26CC /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2C9273BC0E1009E26CC /* APIError.swift */; };
 		FAA6A2CC273BC75A009E26CC /* RocketsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2CB273BC75A009E26CC /* RocketsClient.swift */; };
 		FAA6A2CF273BC98D009E26CC /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2CE273BC98D009E26CC /* ActivityIndicator.swift */; };
+		FABFC6F0273E5E2F00AA1C6B /* RocketParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6EF273E5E2F00AA1C6B /* RocketParameter.swift */; };
+		FABFC6F2273E6C7100AA1C6B /* RocketStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F1273E6C7100AA1C6B /* RocketStage.swift */; };
+		FABFC6F4273E729B00AA1C6B /* Rocket+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F3273E729B00AA1C6B /* Rocket+Ext.swift */; };
 		FAC4085B273C368E00CA83A4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4085A273C368E00CA83A4 /* APIClient.swift */; };
 		FAC4085D273C374B00CA83A4 /* SpaceXAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4085C273C374B00CA83A4 /* SpaceXAPI.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +45,9 @@
 		FAA6A2C9273BC0E1009E26CC /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		FAA6A2CB273BC75A009E26CC /* RocketsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsClient.swift; sourceTree = "<group>"; };
 		FAA6A2CE273BC98D009E26CC /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		FABFC6EF273E5E2F00AA1C6B /* RocketParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketParameter.swift; sourceTree = "<group>"; };
+		FABFC6F1273E6C7100AA1C6B /* RocketStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketStage.swift; sourceTree = "<group>"; };
+		FABFC6F3273E729B00AA1C6B /* Rocket+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rocket+Ext.swift"; sourceTree = "<group>"; };
 		FAC4085A273C368E00CA83A4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		FAC4085C273C374B00CA83A4 /* SpaceXAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				FAA6A2C6273BB8EA009E26CC /* Rocket.swift */,
+				FABFC6F3273E729B00AA1C6B /* Rocket+Ext.swift */,
+				FABFC6EF273E5E2F00AA1C6B /* RocketParameter.swift */,
+				FABFC6F1273E6C7100AA1C6B /* RocketStage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,7 +268,10 @@
 				FAA6A2BF273BB7BA009E26CC /* RocketsCore.swift in Sources */,
 				FAA6A2CF273BC98D009E26CC /* ActivityIndicator.swift in Sources */,
 				FAA6A2CA273BC0E1009E26CC /* APIError.swift in Sources */,
+				FABFC6F0273E5E2F00AA1C6B /* RocketParameter.swift in Sources */,
 				FAA6A2BD273BB7B2009E26CC /* RocketsView.swift in Sources */,
+				FABFC6F2273E6C7100AA1C6B /* RocketStage.swift in Sources */,
+				FABFC6F4273E729B00AA1C6B /* Rocket+Ext.swift in Sources */,
 				FAA6A2A7273BB387009E26CC /* ContentView.swift in Sources */,
 				FAC4085D273C374B00CA83A4 /* SpaceXAPI.swift in Sources */,
 				FAA6A2B7273BB4EE009E26CC /* MainView.swift in Sources */,

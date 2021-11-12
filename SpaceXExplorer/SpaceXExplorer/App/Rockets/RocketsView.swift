@@ -62,6 +62,7 @@ extension RocketsView {
                                         Text(rocketViewStore.state.rocket.firstFlight,
                                              // ??????????????
                                              formatter: viewStore.dateFormatter)
+                                            .padding(.leading, -5)
                                     }
                                     .foregroundColor(.gray)
                                     .font(.footnote)
@@ -83,7 +84,10 @@ struct RocketsView_Previews: PreviewProvider {
                 initialState: .init(
                     rockets: .init(
                         uniqueElements: [Rocket.mockRocket1, Rocket.mockRocket2].map {
-                        RocketDetailState(id: .init(), rocket: $0)
+                        RocketDetailState(
+                            id: .init(),
+                            rocket: $0
+                        )
                     })
                 ),
                 reducer: rocketsReducer,
