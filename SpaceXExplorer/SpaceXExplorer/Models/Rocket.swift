@@ -18,7 +18,7 @@ struct Rocket: Codable, Identifiable, Equatable {
 //    let engines: Engines
     let landingLegs: LandingLegs
 //    let payloadWeights: [PayloadWeight]
-//    let flickrImages: [String]
+    let flickrImages: [String]
     let name, type: String
     let active: Bool
 //    let stages, boosters, costPerLaunch, successRatePct: Int
@@ -34,7 +34,7 @@ struct Rocket: Codable, Identifiable, Equatable {
 //        case engines
         case landingLegs = "landing_legs"
 //        case payloadWeights = "payload_weights"
-//        case flickrImages = "flickr_images"
+        case flickrImages = "flickr_images"
         case name, type, active//, stages, boosters
 //        case costPerLaunch = "cost_per_launch"
 //        case successRatePct = "success_rate_pct"
