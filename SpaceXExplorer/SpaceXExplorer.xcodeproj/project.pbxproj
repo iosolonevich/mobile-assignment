@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FAA6A2A5273BB387009E26CC /* SpaceXExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2A4273BB387009E26CC /* SpaceXExplorerApp.swift */; };
-		FAA6A2A7273BB387009E26CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2A6273BB387009E26CC /* ContentView.swift */; };
 		FAA6A2A9273BB389009E26CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA6A2A8273BB389009E26CC /* Assets.xcassets */; };
 		FAA6A2AC273BB389009E26CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA6A2AB273BB389009E26CC /* Preview Assets.xcassets */; };
 		FAA6A2B4273BB4DC009E26CC /* MainCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2B3273BB4DC009E26CC /* MainCore.swift */; };
@@ -32,7 +31,6 @@
 /* Begin PBXFileReference section */
 		FAA6A2A1273BB387009E26CC /* SpaceXExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceXExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA6A2A4273BB387009E26CC /* SpaceXExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXExplorerApp.swift; sourceTree = "<group>"; };
-		FAA6A2A6273BB387009E26CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FAA6A2A8273BB389009E26CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAA6A2AB273BB389009E26CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAA6A2B3273BB4DC009E26CC /* MainCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCore.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 				FAA6A2C5273BB8D8009E26CC /* Models */,
 				FAA6A2B2273BB4C5009E26CC /* App */,
 				FAA6A2A4273BB387009E26CC /* SpaceXExplorerApp.swift */,
-				FAA6A2A6273BB387009E26CC /* ContentView.swift */,
 				FAA6A2A8273BB389009E26CC /* Assets.xcassets */,
 				FAA6A2AA273BB389009E26CC /* Preview Content */,
 			);
@@ -272,7 +269,6 @@
 				FAA6A2BD273BB7B2009E26CC /* RocketsView.swift in Sources */,
 				FABFC6F2273E6C7100AA1C6B /* RocketStage.swift in Sources */,
 				FABFC6F4273E729B00AA1C6B /* Rocket+Ext.swift in Sources */,
-				FAA6A2A7273BB387009E26CC /* ContentView.swift in Sources */,
 				FAC4085D273C374B00CA83A4 /* SpaceXAPI.swift in Sources */,
 				FAA6A2B7273BB4EE009E26CC /* MainView.swift in Sources */,
 				FAC4085B273C368E00CA83A4 /* APIClient.swift in Sources */,

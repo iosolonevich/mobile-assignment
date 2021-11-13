@@ -22,9 +22,9 @@ struct RocketDetailView: View {
                             AsyncImage(url: URL(string: link)) { image in
                                 image
                                     .resizable()
-                                    .scaledToFit()
-                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                                    .scaledToFill()
                                     .frame(width: geometry.size.width, height: geometry.size.height)
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
                                     .clipped()
                                     
                             } placeholder: {
