@@ -66,6 +66,19 @@ struct RocketDetailView: View {
             }
             
             .navigationBarTitle(viewStore.rocket.name, displayMode: .inline)
+            .toolbar {
+                NavigationLink(destination: LaunchView(store: .init(
+                    initialState: LaunchState(
+                        id: .init(),
+                        rocket: viewStore.rocket,
+                        size: UIScreen.screenSize),
+                        reducer: launchReducer,
+                        environment: LaunchEnvironment(
+                            mainQueue: DispatchQueue.main.eraseToAnyScheduler()))),
+                               label: {
+                    Text("Launch").fontWeight(.bold)
+                })
+            }
         }
     }
 }

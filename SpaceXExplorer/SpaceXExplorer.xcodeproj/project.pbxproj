@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA4F49832742576F00EDA182 /* RocketSpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F49822742576F00EDA182 /* RocketSpriteScene.swift */; };
+		FA7524892742638F00DC2EF0 /* UIScreen+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7524882742638F00DC2EF0 /* UIScreen+Ext.swift */; };
 		FAA6A2A5273BB387009E26CC /* SpaceXExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2A4273BB387009E26CC /* SpaceXExplorerApp.swift */; };
 		FAA6A2A9273BB389009E26CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA6A2A8273BB389009E26CC /* Assets.xcassets */; };
 		FAA6A2AC273BB389009E26CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA6A2AB273BB389009E26CC /* Preview Assets.xcassets */; };
@@ -24,11 +26,15 @@
 		FABFC6F0273E5E2F00AA1C6B /* RocketParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6EF273E5E2F00AA1C6B /* RocketParameter.swift */; };
 		FABFC6F2273E6C7100AA1C6B /* RocketStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F1273E6C7100AA1C6B /* RocketStage.swift */; };
 		FABFC6F4273E729B00AA1C6B /* Rocket+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F3273E729B00AA1C6B /* Rocket+Ext.swift */; };
+		FABFC6F82740090A00AA1C6B /* LaunchCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F72740090A00AA1C6B /* LaunchCore.swift */; };
+		FABFC6FA2740091300AA1C6B /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F92740091300AA1C6B /* LaunchView.swift */; };
 		FAC4085B273C368E00CA83A4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4085A273C368E00CA83A4 /* APIClient.swift */; };
 		FAC4085D273C374B00CA83A4 /* SpaceXAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4085C273C374B00CA83A4 /* SpaceXAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA4F49822742576F00EDA182 /* RocketSpriteScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSpriteScene.swift; sourceTree = "<group>"; };
+		FA7524882742638F00DC2EF0 /* UIScreen+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Ext.swift"; sourceTree = "<group>"; };
 		FAA6A2A1273BB387009E26CC /* SpaceXExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceXExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA6A2A4273BB387009E26CC /* SpaceXExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXExplorerApp.swift; sourceTree = "<group>"; };
 		FAA6A2A8273BB389009E26CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +52,8 @@
 		FABFC6EF273E5E2F00AA1C6B /* RocketParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketParameter.swift; sourceTree = "<group>"; };
 		FABFC6F1273E6C7100AA1C6B /* RocketStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketStage.swift; sourceTree = "<group>"; };
 		FABFC6F3273E729B00AA1C6B /* Rocket+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rocket+Ext.swift"; sourceTree = "<group>"; };
+		FABFC6F72740090A00AA1C6B /* LaunchCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCore.swift; sourceTree = "<group>"; };
+		FABFC6F92740091300AA1C6B /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		FAC4085A273C368E00CA83A4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		FAC4085C273C374B00CA83A4 /* SpaceXAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +93,7 @@
 				FAA6A2CD273BC95B009E26CC /* Components */,
 				FAA6A2C5273BB8D8009E26CC /* Models */,
 				FAA6A2B2273BB4C5009E26CC /* App */,
+				FABFC6F6274008F900AA1C6B /* Launch */,
 				FAA6A2A4273BB387009E26CC /* SpaceXExplorerApp.swift */,
 				FAA6A2A8273BB389009E26CC /* Assets.xcassets */,
 				FAA6A2AA273BB389009E26CC /* Preview Content */,
@@ -162,8 +171,19 @@
 			isa = PBXGroup;
 			children = (
 				FAA6A2CE273BC98D009E26CC /* ActivityIndicator.swift */,
+				FA4F49822742576F00EDA182 /* RocketSpriteScene.swift */,
+				FA7524882742638F00DC2EF0 /* UIScreen+Ext.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		FABFC6F6274008F900AA1C6B /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				FABFC6F72740090A00AA1C6B /* LaunchCore.swift */,
+				FABFC6F92740091300AA1C6B /* LaunchView.swift */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		FAC40858273C363000CA83A4 /* Data */ = {
@@ -266,6 +286,9 @@
 				FAA6A2CF273BC98D009E26CC /* ActivityIndicator.swift in Sources */,
 				FAA6A2CA273BC0E1009E26CC /* APIError.swift in Sources */,
 				FABFC6F0273E5E2F00AA1C6B /* RocketParameter.swift in Sources */,
+				FA7524892742638F00DC2EF0 /* UIScreen+Ext.swift in Sources */,
+				FA4F49832742576F00EDA182 /* RocketSpriteScene.swift in Sources */,
+				FABFC6FA2740091300AA1C6B /* LaunchView.swift in Sources */,
 				FAA6A2BD273BB7B2009E26CC /* RocketsView.swift in Sources */,
 				FABFC6F2273E6C7100AA1C6B /* RocketStage.swift in Sources */,
 				FABFC6F4273E729B00AA1C6B /* Rocket+Ext.swift in Sources */,
@@ -274,6 +297,7 @@
 				FAC4085B273C368E00CA83A4 /* APIClient.swift in Sources */,
 				FAA6A2A5273BB387009E26CC /* SpaceXExplorerApp.swift in Sources */,
 				FAA6A2B4273BB4DC009E26CC /* MainCore.swift in Sources */,
+				FABFC6F82740090A00AA1C6B /* LaunchCore.swift in Sources */,
 				FAA6A2C4273BB7FB009E26CC /* RocketDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +429,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SpaceXExplorer/Preview Content\"";
+				DEVELOPMENT_TEAM = WXJEK8MMRK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -433,6 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SpaceXExplorer/Preview Content\"";
+				DEVELOPMENT_TEAM = WXJEK8MMRK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
