@@ -18,7 +18,11 @@ class RocketScene: SKScene {
     private var backgroundNode: SKNode!
     private var midgroundNode: SKNode!
     private var foregroundNode: SKNode!
+    
     private var rocketNode: SKNode!
+    private var idleRocket: SKNode!
+    private var flyingRocket: SKNode!
+    
     private var hudNode: SKNode!
     private var tapToLaunchNode: SKNode!
         
@@ -51,6 +55,9 @@ class RocketScene: SKScene {
         }
         
         rocketNode = createRocket()
+        idleRocket = rocketNode.childNode(withName: "idle")
+        flyingRocket = rocketNode.childNode(withName: "flying")
+        
         foregroundNode.addChild(rocketNode)
     }
     
@@ -62,7 +69,14 @@ class RocketScene: SKScene {
         if rocketNode.position.y > 300.0 {
             midgroundNode.position = CGPoint(x: 0.0, y: -((rocketNode.position.y - 300.0)))
             foregroundNode.position = CGPoint(x: 0.0, y: -(rocketNode.position.y - 300.0))
-            
+        }
+       
+        if let verticalVelocity = rocketNode.physicsBody?.velocity.dy, verticalVelocity > 0 {
+            flyingRocket?.isHidden = false
+            idleRocket?.isHidden = true
+        } else {
+            flyingRocket?.isHidden = true
+            idleRocket?.isHidden = false
         }
     }
     
@@ -107,7 +121,7 @@ class RocketScene: SKScene {
                 anchor = CGPoint(x: 0.0, y: 0.5)
                 xPosition = 0.0
             default:
-                spriteName = "Cloud3"
+                spriteName = "Cloud2"
                 anchor = CGPoint(x: self.size.width / 2, y: 0.5)
                 xPosition = self.size.width / 2
             }
@@ -151,11 +165,16 @@ to launch!
     private func createRocket() -> SKNode {
         let rocketNode = SKNode()
         rocketNode.position = CGPoint(x: self.size.width / 2, y: 150)
+
+        let idleRocketSprite = SKSpriteNode(texture: SKTexture(imageNamed: "Rocket Idle"))
+        idleRocketSprite.name = "idle"
+        let flyingRocketSprite = SKSpriteNode(texture: SKTexture(imageNamed: "Rocket Flying"))
+        flyingRocketSprite.name = "flying"
         
-        let sprite = SKSpriteNode(imageNamed: "Rocket Idle")
-        rocketNode.addChild(sprite)
+        rocketNode.addChild(idleRocketSprite)
+        rocketNode.addChild(flyingRocketSprite)
         
-        rocketNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width / 2)
+        rocketNode.physicsBody = SKPhysicsBody(circleOfRadius: idleRocketSprite.size.width / 2)
         rocketNode.physicsBody?.isDynamic = false
         rocketNode.physicsBody?.allowsRotation = true
         rocketNode.physicsBody?.friction = 0.0
