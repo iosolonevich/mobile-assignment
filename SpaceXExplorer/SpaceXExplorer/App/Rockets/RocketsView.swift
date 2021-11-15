@@ -14,24 +14,21 @@ struct RocketsView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             NavigationView {
-//                Group {
-                    if viewStore.isLoading {
-                        VStack {
-                            Spacer()
-                            ActivityIndicator(style: .large,
-                                              isAnimating: viewStore.binding(
-                                                get: { $0.isLoading },
-                                                send: RocketsAction.loadingActive))
-                            Spacer()
-                        }
-                    } else {
-                        List {
-                            RocketsList(viewStore)
-                        }
-                        .navigationBarTitle(Text("Rockets"))
+                if viewStore.isLoading {
+                    VStack {
+                        Spacer()
+                        ActivityIndicator(style: .large,
+                                          isAnimating: viewStore.binding(
+                                            get: { $0.isLoading },
+                                            send: RocketsAction.loadingActive))
+                        Spacer()
                     }
-//                }
-//                .padding()
+                } else {
+                    List {
+                        RocketsList(viewStore)
+                    }
+                    .navigationBarTitle(Text("Rockets"))
+                }
             }
             .edgesIgnoringSafeArea(.bottom)
             .onAppear { viewStore.send(.onAppear) }

@@ -21,8 +21,6 @@ struct RocketDetailState: Equatable, Identifiable {
             getRocketStageDescription(for: rocket.secondStage)
         ]
     }
-    
-    
 }
 
 enum RocketDetailAction: Equatable {
