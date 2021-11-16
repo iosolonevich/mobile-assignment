@@ -93,7 +93,6 @@
 				FAA6A2CD273BC95B009E26CC /* Components */,
 				FAA6A2C5273BB8D8009E26CC /* Models */,
 				FAA6A2B2273BB4C5009E26CC /* App */,
-				FABFC6F6274008F900AA1C6B /* Launch */,
 				FAA6A2A4273BB387009E26CC /* SpaceXExplorerApp.swift */,
 				FAA6A2A8273BB389009E26CC /* Assets.xcassets */,
 				FAA6A2AA273BB389009E26CC /* Preview Content */,
@@ -115,6 +114,7 @@
 				FAA6A2B5273BB4E2009E26CC /* Main */,
 				FAA6A2BB273BB7A1009E26CC /* Rockets */,
 				FAA6A2C0273BB7D4009E26CC /* RocketDetail */,
+				FABFC6F6274008F900AA1C6B /* Launch */,
 			);
 			path = App;
 			sourceTree = "<group>";
