@@ -10,7 +10,7 @@ import Foundation
 enum APIError: Error, Equatable {
     case network(error: Error)
     case decoding(error: Error)
-    case error(error: Error)
+    case error(errorMessage: String)
     case notFound
     
     static func == (lhs: APIError, rhs: APIError) -> Bool {
