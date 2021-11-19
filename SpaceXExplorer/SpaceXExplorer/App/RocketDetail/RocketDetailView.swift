@@ -36,7 +36,6 @@ struct RocketDetailView: View {
                     }
                 }
                 .frame(height: 250)
-    //            .edgesIgnoringSafeArea(.top)
                 
                 VStack(alignment: .leading) {
                     Text("Overview")
@@ -64,20 +63,26 @@ struct RocketDetailView: View {
                    
                 }.padding()
             }
-            
             .navigationBarTitle(viewStore.rocket.name, displayMode: .inline)
             .toolbar {
-                NavigationLink(destination: LaunchView(store: .init(
-                    initialState: LaunchState(
-                        id: .init(),
-                        rocket: viewStore.rocket,
-                        size: UIScreen.screenSize),
-                        reducer: launchReducer,
-                        environment: LaunchEnvironment(
-                            mainQueue: DispatchQueue.main.eraseToAnyScheduler()))),
-                               label: {
-                    Text("Launch").fontWeight(.bold)
-                })
+                NavigationLink(
+                    destination: LaunchView(
+                        store: .init(
+                            initialState: LaunchState(
+                                id: .init(),
+                                rocket: viewStore.rocket
+                            ),
+                            reducer: launchReducer,
+                            environment: LaunchEnvironment(
+                                motionManager: .live,
+                                mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                            )
+                        )
+                    ),
+                   label: {
+                       Text("Launch").fontWeight(.bold)
+                   }
+                )
             }
         }
     }

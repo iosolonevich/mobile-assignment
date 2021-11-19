@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CombineSchedulers
 import ComposableArchitecture
 
 struct RocketDetailState: Equatable, Identifiable {
@@ -64,7 +63,7 @@ private func getRocketParameters(for rocket: Rocket) -> [RocketParameter] {
     return rocketParameters
 }
 
-private func getRocketStageDescription(for rocketStage: RocketStageProtocol) -> RocketStage {
+private func getRocketStageDescription(for rocketStage: RocketStageType) -> RocketStage {
     
     let reusability = rocketStage.reusable ? "reusable" : "not reusable"
     let enginesCount = "\(rocketStage.engines) \(rocketStage.engines > 1 ? "engines" : "engine")"
@@ -77,5 +76,11 @@ private func getRocketStageDescription(for rocketStage: RocketStageProtocol) -> 
         burnTimeString = "burn time not available"
     }
         
-    return RocketStage(id: UUID.init(), isReusable: reusability, enginesCount: enginesCount, fuelMassT: fuelMass, burnTimeSeconds: burnTimeString)
+    return RocketStage(
+        id: UUID.init(),
+        isReusable: reusability,
+        enginesCount: enginesCount,
+        fuelMassT: fuelMass,
+        burnTimeSeconds: burnTimeString
+    )
 }

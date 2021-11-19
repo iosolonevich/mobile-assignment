@@ -17,10 +17,13 @@ struct RocketsView: View {
                 if viewStore.isLoading {
                     VStack {
                         Spacer()
-                        ActivityIndicator(style: .large,
-                                          isAnimating: viewStore.binding(
-                                            get: { $0.isLoading },
-                                            send: RocketsAction.loadingActive))
+                        ActivityIndicator(
+                            style: .large,
+                            isAnimating: viewStore.binding(
+                                get: { $0.isLoading },
+                                send: RocketsAction.loadingActive
+                            )
+                        )
                         Spacer()
                     }
                 } else {
@@ -41,8 +44,9 @@ extension RocketsView {
     @ViewBuilder
     private func RocketsList(_ viewStore: ViewStore<RocketsState, RocketsAction>) -> some View {
         ForEachStore(
-            store.scope(state: { $0.rockets },
-                        action: RocketsAction.rocket(id:action:)),
+            store.scope(
+                state: { $0.rockets },
+                action: RocketsAction.rocket(id:action:)),
             content: { rocketStore in
                 WithViewStore(rocketStore) { rocketViewStore in
                     NavigationLink(
@@ -56,16 +60,13 @@ extension RocketsView {
                                         .font(.headline)
                                     HStack {
                                         Text("First flight:")
-                                        Text(rocketViewStore.state.rocket.firstFlight,
-                                             // ??????????????
-                                             formatter: viewStore.dateFormatter)
+                                        Text(rocketViewStore.state.rocket.firstFlight, formatter: viewStore.dateFormatter)
                                             .padding(.leading, -5)
                                     }
                                     .foregroundColor(.gray)
                                     .font(.footnote)
                                 }
                             }
-                            
                         }
                     )
                 }
@@ -91,7 +92,6 @@ struct RocketsView_Previews: PreviewProvider {
                 environment: .init(
                     rocketsClient: .mockPreview(),
                     mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
-//                    dateFormatter: DateFormatter(),
                     uuid: UUID.init
                 )
             )

@@ -7,16 +7,16 @@
 
 import Foundation
 
-protocol RocketStageProtocol {
+protocol RocketStageType {
     var reusable: Bool { get }
     var engines: Int { get }
     var fuelAmountTons: Double { get }
     var burnTimeSEC: Int? { get }
 }
 
-extension FirstStage: RocketStageProtocol {}
+extension FirstStage: RocketStageType {}
 
-extension SecondStage: RocketStageProtocol {}
+extension SecondStage: RocketStageType {}
 
 struct RocketStage: Identifiable, Equatable {
     let id: UUID

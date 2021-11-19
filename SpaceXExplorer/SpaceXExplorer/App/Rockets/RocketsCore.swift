@@ -35,11 +35,11 @@ enum RocketsAction: Equatable {
 struct RocketsEnvironment {
     var rocketsClient: RocketsClient
     var mainQueue: AnySchedulerOf<DispatchQueue>
-//    var dateFormatter: DateFormatter
     var uuid: () -> UUID
 }
 
 let rocketsReducer = Reducer<RocketsState, RocketsAction, RocketsEnvironment>.combine(
+    
     rocketDetailReducer.forEach(
         state: \.rockets,
         action: /RocketsAction.rocket(id:action:),
@@ -47,6 +47,7 @@ let rocketsReducer = Reducer<RocketsState, RocketsAction, RocketsEnvironment>.co
                 .init(mainQueue: environment.mainQueue)
         }
     ),
+    
     .init { state, action, environment in
         
         struct RocketsCancelId: Hashable {}
@@ -54,6 +55,7 @@ let rocketsReducer = Reducer<RocketsState, RocketsAction, RocketsEnvironment>.co
         switch action {
         case .onAppear:
             return .init(value: .getRockets)
+        
         case .getRockets:
             state.rockets = []
             return environment.rocketsClient.rockets()
@@ -61,6 +63,7 @@ let rocketsReducer = Reducer<RocketsState, RocketsAction, RocketsEnvironment>.co
                 .catchToEffect()
                 .map(RocketsAction.rocketsResponse)
                 .cancellable(id: RocketsCancelId())
+        
         case .rocketsResponse(.success(let rockets)):
             let rocketItems = IdentifiedArrayOf<RocketDetailState>(
                 uniqueElements: rockets.map {
@@ -69,13 +72,17 @@ let rocketsReducer = Reducer<RocketsState, RocketsAction, RocketsEnvironment>.co
             )
             state.rockets = rocketItems
             return .init(value: .loadingActive(false))
+        
         case .rocketsResponse(.failure(let error)):
             return .init(value: .loadingActive(false))
+        
         case .loadingActive(let isLoading):
             state.isLoading = isLoading
             return .none
+        
         case .rocket(id: _, action: _):
             return .none
+        
         case .onDisappear:
             return .cancel(id: RocketsCancelId())
         }

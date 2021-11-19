@@ -11,7 +11,8 @@ typealias Rockets = [Rocket]
 
 // MARK: - Rocket
 struct Rocket: Codable, Identifiable, Equatable {
-    let height, diameter: Diameter
+    let height: Diameter
+    let diameter: Diameter
     let mass: Mass
     let firstStage: FirstStage
     let secondStage: SecondStage
@@ -19,13 +20,16 @@ struct Rocket: Codable, Identifiable, Equatable {
     let landingLegs: LandingLegs
 //    let payloadWeights: [PayloadWeight]
     let flickrImages: [String]
-    let name, type: String
+    let name: String
+    let type: String
     let active: Bool
 //    let stages, boosters, costPerLaunch, successRatePct: Int
     let firstFlight: Date
-    let country, company: String
+    let country: String
+    let company: String
     let wikipedia: String
-    let rocketDescription, id: String
+    let rocketDescription: String
+    let id: String
 
     enum CodingKeys: String, CodingKey {
         case height, diameter, mass
@@ -47,18 +51,22 @@ struct Rocket: Codable, Identifiable, Equatable {
 
 // MARK: - Diameter
 struct Diameter: Codable, Equatable {
-    let meters, feet: Double?
+    let meters: Double?
+    let feet: Double?
 }
 
 // MARK: - Engines
 struct Engines: Codable {
     //let isp: ISP
-    //let thrustSeaLevel, thrustVacuum: Thrust
+    //let thrustSeaLevel: Thrust
+//    let thrustVacuum: Thrust
     let number: Int
-    let type, version: String
+    let type: String
+    let version: String
     let layout: String?
     let engineLossMax: Int?
-    let propellant1, propellant2: String
+    let propellant1: String
+    let propellant2: String
     let thrustToWeight: Double
 
     enum CodingKeys: String, CodingKey {
@@ -75,7 +83,8 @@ struct Engines: Codable {
 
 // MARK: - ISP
 //struct ISP: Codable {
-//    let seaLevel, vacuum: Int
+//    let seaLevel:Int
+//    let vacuum: Int
 //
 //    enum CodingKeys: String, CodingKey {
 //        case seaLevel = "sea_level"
@@ -85,12 +94,14 @@ struct Engines: Codable {
 
 // MARK: - Thrust
 //struct Thrust: Codable {
-//    let kN, lbf: Int
+//    let kN: Int
+//    let lbf: Int
 //}
 
 // MARK: - FirstStage
 struct FirstStage: Codable, Equatable {
-    //let thrustSeaLevel, thrustVacuum: Thrust
+    //let thrustSeaLevel: Thrust
+//    let thrustVacuum: Thrust
     let reusable: Bool
     let engines: Int
     let fuelAmountTons: Double
@@ -113,13 +124,16 @@ struct LandingLegs: Codable, Equatable {
 
 // MARK: - Mass
 struct Mass: Codable, Equatable {
-    let kg, lb: Int
+    let kg: Int
+    let lb: Int
 }
 
 // MARK: - PayloadWeight
 struct PayloadWeight: Codable {
-    let id, name: String
-    let kg, lb: Int
+    let id: String
+    let name: String
+    let kg: Int
+    let lb: Int
 }
 
 // MARK: - SecondStage
@@ -152,5 +166,6 @@ struct SecondStage: Codable ,Equatable {
 
 // MARK: - CompositeFairing
 struct CompositeFairing: Codable {
-    let height, diameter: Diameter
+    let height: Diameter
+    let diameter: Diameter
 }

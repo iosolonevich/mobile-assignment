@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FA4F49832742576F00EDA182 /* RocketSpriteScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F49822742576F00EDA182 /* RocketSpriteScene.swift */; };
-		FA7524892742638F00DC2EF0 /* UIScreen+sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7524882742638F00DC2EF0 /* UIScreen+sizes.swift */; };
 		FAA6A2A5273BB387009E26CC /* SpaceXExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2A4273BB387009E26CC /* SpaceXExplorerApp.swift */; };
 		FAA6A2A9273BB389009E26CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA6A2A8273BB389009E26CC /* Assets.xcassets */; };
 		FAA6A2AC273BB389009E26CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA6A2AB273BB389009E26CC /* Preview Assets.xcassets */; };
@@ -21,14 +20,15 @@
 		FAA6A2C4273BB7FB009E26CC /* RocketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2C3273BB7FB009E26CC /* RocketDetailView.swift */; };
 		FAA6A2C7273BB8EA009E26CC /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2C6273BB8EA009E26CC /* Rocket.swift */; };
 		FAA6A2CA273BC0E1009E26CC /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2C9273BC0E1009E26CC /* APIError.swift */; };
-		FAA6A2CC273BC75A009E26CC /* RocketsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2CB273BC75A009E26CC /* RocketsClient.swift */; };
+		FAA6A2CC273BC75A009E26CC /* SpaceXAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2CB273BC75A009E26CC /* SpaceXAPIClient.swift */; };
 		FAA6A2CF273BC98D009E26CC /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6A2CE273BC98D009E26CC /* ActivityIndicator.swift */; };
+		FAABBEE92747CEF500B6AC36 /* ComposableCoreMotion in Frameworks */ = {isa = PBXBuildFile; productRef = FAABBEE82747CEF500B6AC36 /* ComposableCoreMotion */; };
 		FAB91C04274647A6001F4C09 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB91C03274647A6001F4C09 /* Launch.swift */; };
 		FAB91C09274651FA001F4C09 /* SpaceXAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB91C08274651FA001F4C09 /* SpaceXAPI.swift */; };
 		FAB91C0B2746544F001F4C09 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB91C0A2746544F001F4C09 /* Route.swift */; };
 		FABFC6F0273E5E2F00AA1C6B /* RocketParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6EF273E5E2F00AA1C6B /* RocketParameter.swift */; };
 		FABFC6F2273E6C7100AA1C6B /* RocketStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F1273E6C7100AA1C6B /* RocketStage.swift */; };
-		FABFC6F4273E729B00AA1C6B /* Rocket+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F3273E729B00AA1C6B /* Rocket+Ext.swift */; };
+		FABFC6F4273E729B00AA1C6B /* Rocket+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F3273E729B00AA1C6B /* Rocket+mock.swift */; };
 		FABFC6F82740090A00AA1C6B /* LaunchCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F72740090A00AA1C6B /* LaunchCore.swift */; };
 		FABFC6FA2740091300AA1C6B /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABFC6F92740091300AA1C6B /* LaunchView.swift */; };
 		FAC4085B273C368E00CA83A4 /* URLSession+requestPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4085A273C368E00CA83A4 /* URLSession+requestPublisher.swift */; };
@@ -36,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		FA4F49822742576F00EDA182 /* RocketSpriteScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSpriteScene.swift; sourceTree = "<group>"; };
-		FA7524882742638F00DC2EF0 /* UIScreen+sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+sizes.swift"; sourceTree = "<group>"; };
 		FAA6A2A1273BB387009E26CC /* SpaceXExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceXExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA6A2A4273BB387009E26CC /* SpaceXExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXExplorerApp.swift; sourceTree = "<group>"; };
 		FAA6A2A8273BB389009E26CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,14 +48,14 @@
 		FAA6A2C3273BB7FB009E26CC /* RocketDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailView.swift; sourceTree = "<group>"; };
 		FAA6A2C6273BB8EA009E26CC /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
 		FAA6A2C9273BC0E1009E26CC /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		FAA6A2CB273BC75A009E26CC /* RocketsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsClient.swift; sourceTree = "<group>"; };
+		FAA6A2CB273BC75A009E26CC /* SpaceXAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAPIClient.swift; sourceTree = "<group>"; };
 		FAA6A2CE273BC98D009E26CC /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		FAB91C03274647A6001F4C09 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		FAB91C08274651FA001F4C09 /* SpaceXAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXAPI.swift; sourceTree = "<group>"; };
 		FAB91C0A2746544F001F4C09 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		FABFC6EF273E5E2F00AA1C6B /* RocketParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketParameter.swift; sourceTree = "<group>"; };
 		FABFC6F1273E6C7100AA1C6B /* RocketStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketStage.swift; sourceTree = "<group>"; };
-		FABFC6F3273E729B00AA1C6B /* Rocket+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rocket+Ext.swift"; sourceTree = "<group>"; };
+		FABFC6F3273E729B00AA1C6B /* Rocket+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rocket+mock.swift"; sourceTree = "<group>"; };
 		FABFC6F72740090A00AA1C6B /* LaunchCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCore.swift; sourceTree = "<group>"; };
 		FABFC6F92740091300AA1C6B /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		FAC4085A273C368E00CA83A4 /* URLSession+requestPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+requestPublisher.swift"; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAABBEE92747CEF500B6AC36 /* ComposableCoreMotion in Frameworks */,
 				FAA6A2BA273BB5A4009E26CC /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB91C0527464F75001F4C09 /* Extensions */,
-				FAC40858273C363000CA83A4 /* Data */,
+				FAA6A2C8273BC0CF009E26CC /* Network */,
 				FAA6A2CD273BC95B009E26CC /* Components */,
 				FAA6A2C5273BB8D8009E26CC /* Models */,
 				FAA6A2B2273BB4C5009E26CC /* App */,
@@ -155,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA6A2C6273BB8EA009E26CC /* Rocket.swift */,
-				FABFC6F3273E729B00AA1C6B /* Rocket+Ext.swift */,
+				FABFC6F3273E729B00AA1C6B /* Rocket+mock.swift */,
 				FABFC6EF273E5E2F00AA1C6B /* RocketParameter.swift */,
 				FABFC6F1273E6C7100AA1C6B /* RocketStage.swift */,
 				FAB91C03274647A6001F4C09 /* Launch.swift */,
@@ -163,14 +163,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FAA6A2C8273BC0CF009E26CC /* API */ = {
+		FAA6A2C8273BC0CF009E26CC /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				FAA6A2C9273BC0E1009E26CC /* APIError.swift */,
 				FAB91C08274651FA001F4C09 /* SpaceXAPI.swift */,
+				FAA6A2CB273BC75A009E26CC /* SpaceXAPIClient.swift */,
 				FAB91C0A2746544F001F4C09 /* Route.swift */,
 			);
-			path = API;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FAA6A2CD273BC95B009E26CC /* Components */ = {
@@ -186,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				FAC4085A273C368E00CA83A4 /* URLSession+requestPublisher.swift */,
-				FA7524882742638F00DC2EF0 /* UIScreen+sizes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,23 +198,6 @@
 				FABFC6F92740091300AA1C6B /* LaunchView.swift */,
 			);
 			path = Launch;
-			sourceTree = "<group>";
-		};
-		FAC40858273C363000CA83A4 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				FAC40859273C363A00CA83A4 /* Client */,
-				FAA6A2C8273BC0CF009E26CC /* API */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		FAC40859273C363A00CA83A4 /* Client */ = {
-			isa = PBXGroup;
-			children = (
-				FAA6A2CB273BC75A009E26CC /* RocketsClient.swift */,
-			);
-			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +218,7 @@
 			name = SpaceXExplorer;
 			packageProductDependencies = (
 				FAA6A2B9273BB5A4009E26CC /* ComposableArchitecture */,
+				FAABBEE82747CEF500B6AC36 /* ComposableCoreMotion */,
 			);
 			productName = SpaceXExplorer;
 			productReference = FAA6A2A1273BB387009E26CC /* SpaceXExplorer.app */;
@@ -266,6 +250,7 @@
 			mainGroup = FAA6A298273BB387009E26CC;
 			packageReferences = (
 				FAA6A2B8273BB5A4009E26CC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				FAABBEE72747CEF500B6AC36 /* XCRemoteSwiftPackageReference "composable-core-motion" */,
 			);
 			productRefGroup = FAA6A2A2273BB387009E26CC /* Products */;
 			projectDirPath = "";
@@ -295,19 +280,18 @@
 			files = (
 				FAA6A2C7273BB8EA009E26CC /* Rocket.swift in Sources */,
 				FAA6A2C2273BB7EF009E26CC /* RocketDetailCore.swift in Sources */,
-				FAA6A2CC273BC75A009E26CC /* RocketsClient.swift in Sources */,
+				FAA6A2CC273BC75A009E26CC /* SpaceXAPIClient.swift in Sources */,
 				FAA6A2BF273BB7BA009E26CC /* RocketsCore.swift in Sources */,
 				FAB91C04274647A6001F4C09 /* Launch.swift in Sources */,
 				FAA6A2CF273BC98D009E26CC /* ActivityIndicator.swift in Sources */,
 				FAA6A2CA273BC0E1009E26CC /* APIError.swift in Sources */,
 				FABFC6F0273E5E2F00AA1C6B /* RocketParameter.swift in Sources */,
-				FA7524892742638F00DC2EF0 /* UIScreen+sizes.swift in Sources */,
 				FAB91C0B2746544F001F4C09 /* Route.swift in Sources */,
 				FA4F49832742576F00EDA182 /* RocketSpriteScene.swift in Sources */,
 				FABFC6FA2740091300AA1C6B /* LaunchView.swift in Sources */,
 				FAA6A2BD273BB7B2009E26CC /* RocketsView.swift in Sources */,
 				FABFC6F2273E6C7100AA1C6B /* RocketStage.swift in Sources */,
-				FABFC6F4273E729B00AA1C6B /* Rocket+Ext.swift in Sources */,
+				FABFC6F4273E729B00AA1C6B /* Rocket+mock.swift in Sources */,
 				FAA6A2B7273BB4EE009E26CC /* MainView.swift in Sources */,
 				FAB91C09274651FA001F4C09 /* SpaceXAPI.swift in Sources */,
 				FAC4085B273C368E00CA83A4 /* URLSession+requestPublisher.swift in Sources */,
@@ -527,6 +511,14 @@
 				kind = branch;
 			};
 		};
+		FAABBEE72747CEF500B6AC36 /* XCRemoteSwiftPackageReference "composable-core-motion" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/composable-core-motion";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -534,6 +526,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FAA6A2B8273BB5A4009E26CC /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		FAABBEE82747CEF500B6AC36 /* ComposableCoreMotion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAABBEE72747CEF500B6AC36 /* XCRemoteSwiftPackageReference "composable-core-motion" */;
+			productName = ComposableCoreMotion;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

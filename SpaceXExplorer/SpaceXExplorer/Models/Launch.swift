@@ -22,16 +22,20 @@ struct Launch: Codable {
     let failures: [Failure]
     let details: String?
     let crew: [Crew]
-    let ships, capsules, payloads: [String]
+    let ships: [String]
+    let capsules: [String]
+    let payloads: [String]
     let launchpad: Launchpad
     let flightNumber: Int
-    let name, dateUTC: String
+    let name: String
+    let dateUTC: String
     let dateUnix: Int
     let dateLocal: Date
     let datePrecision: DatePrecision
     let upcoming: Bool
     let cores: [Core]
-    let autoUpdate, tbd: Bool
+    let autoUpdate: Bool
+    let tbd: Bool
     let launchLibraryID: String?
     let id: String
 
@@ -58,7 +62,10 @@ struct Launch: Codable {
 struct Core: Codable {
     let core: String?
     let flight: Int?
-    let gridfins, legs, reused, landingAttempt: Bool?
+    let gridfins: Bool
+    let legs: Bool
+    let reused: Bool
+    let landingAttempt: Bool?
     let landingSuccess: Bool?
     let landingType: LandingType?
     let landpad: Landpad?
@@ -90,7 +97,8 @@ enum Landpad: String, Codable {
 
 // MARK: - Crew
 struct Crew: Codable {
-    let crew, role: String
+    let crew: String
+    let role: String
 }
 
 enum DatePrecision: String, Codable {
@@ -108,7 +116,9 @@ struct Failure: Codable {
 
 // MARK: - Fairings
 struct Fairings: Codable {
-    let reused, recoveryAttempt, recovered: Bool?
+    let reused: Bool?
+    let recoveryAttempt: Bool?
+    let recovered: Bool?
     let ships: [String]
 
     enum CodingKeys: String, CodingKey {
@@ -151,14 +161,16 @@ struct Flickr: Codable {
 
 // MARK: - Patch
 struct Patch: Codable {
-    let small, large: String?
+    let small: String?
+    let large: String?
 }
 
 // MARK: - Reddit
 struct Reddit: Codable {
     let campaign: String?
     let launch: String?
-    let media, recovery: String?
+    let media: String?
+    let recovery: String?
 }
 
 enum RocketElement: String, Codable {
